@@ -13,8 +13,6 @@ spec:
     metadata:
       labels:
         app: argocd-notifications
-        annotations:
-          notifications.argoproj.io/subscribe.on-sync-succeeded.deploy-webhook: ""
     spec:
       containers:
         - name: argocd-notifications
