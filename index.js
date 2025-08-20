@@ -13,7 +13,7 @@ app.post('/deploy-webhook', (req, res) => {
     const { app: appName, environment, commit, timestamp, status } = req.body
     // Example: log the deployment event
     console.log(
-        `Deployment received: app=${appName}, env=${environment}, commit=${commit}, time=${timestamp}`
+        `Deployment data received: app=${appName}, env=${environment}, commit=${commit}, time=${timestamp}`
     )
     // (Further processing below, e.g., update metrics)
     res.sendStatus(200)
