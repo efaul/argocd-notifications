@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-notifications
+  labels:
+    app: argocd-notifications
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: argocd-notifications
+  template:
+    metadata:
+      labels:
+        app: argocd-notifications
+    spec:
+      containers:
+        - name: argocd-notifications
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 3000

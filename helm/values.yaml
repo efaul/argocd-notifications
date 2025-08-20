@@ -1,0 +1,9 @@
+replicaCount: 1
+image:
+  repository: "elrichfaul/argocd-notifications"
+  pullPolicy: IfNotPresent
+  tag: "latest"
+service:
+  type: ClusterIP
+  port: 3000
+resources: {}
